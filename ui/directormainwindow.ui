@@ -1,0 +1,2443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DirectorMainWindow</class>
+ <widget class="QMainWindow" name="DirectorMainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ИПК для Магазина одежды</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resource/resource.qrc">
+    <normaloff>:/icons/icons/window-logo.ico</normaloff>:/icons/icons/window-logo.ico</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+	background-color: white;
+	border-top: 1px solid #9e9e9e;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <item>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTabWidget {
+	border: 0px;
+}
+
+QTabBar {
+	font-weight: bold;
+}
+
+QTabBar::tab {
+	background: #f5f5f5;
+	border: 1px solid #9e9e9e;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-left: 0px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	font-weight: normal;
+}
+
+QTabBar::tab:selected {
+	background: white;
+	border-bottom-width: 0px;
+	font-weight: bold;
+}
+
+QTabBar::tab:hover:!selected {
+	background: #e9f3fb;
+}
+
+QTabBar::tab:last:selected {
+    border-right: 0px;
+}
+</string>
+        </property>
+        <property name="tabPosition">
+         <enum>QTabWidget::North</enum>
+        </property>
+        <property name="tabShape">
+         <enum>QTabWidget::Rounded</enum>
+        </property>
+        <property name="currentIndex">
+         <number>5</number>
+        </property>
+        <property name="elideMode">
+         <enum>Qt::ElideNone</enum>
+        </property>
+        <widget class="QWidget" name="contracts">
+         <attribute name="title">
+          <string>Договоры</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="contractsVerticalLayout">
+            <item>
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>70</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="contractTypes">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Параметры отображения договоров&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QGroupBox {
+	background: #f5f5f5;
+	border: 1px solid black;
+}
+</string>
+              </property>
+              <property name="title">
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <property name="spacing">
+                <number>15</number>
+               </property>
+               <property name="leftMargin">
+                <number>9</number>
+               </property>
+               <property name="bottomMargin">
+                <number>10</number>
+               </property>
+               <item>
+                <widget class="QCheckBox" name="expiring">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Договоры, срок действия которых истечет через 1-2 дня&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="text">
+                  <string>Истекающие</string>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="acting">
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>Действующие</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="archival">
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Договоры с истекшим сроком действия&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="text">
+                  <string>Архивные</string>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTableView" name="contractsTable">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QTableView {
+	margin: 20px;
+	margin-left: 45px;
+	margin-right: 45px;
+	background: white;
+	border: 1px solid black;
+	gridline-color: black;
+}
+
+QTableView::item {
+	color: black;
+}
+
+QTableView::item:selected {
+	background: #e9f3fb;
+}
+
+QHeaderView::section {
+	background: #6bd3e0;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border: 1px solid black;
+	border-left: 0px;
+	border-top: 0px;
+}
+
+  QScrollBar:vertical {
+      border: 1px solid #77bdb0;
+      background: white;
+      width: 20px;
+      margin: 35px 0 35px 0;
+  }
+
+  QScrollBar::handle:vertical {
+      background: #e0dcdc;
+	  border-top: 1px solid #77bdb0;
+	  border-bottom: 1px solid #77bdb0; 
+      min-height: 5px;
+  }
+
+  QScrollBar::handle:vertical:hover {
+       background: #F19CBB;
+  }
+
+  QScrollBar::handle:vertical:pressed {
+       background: #FDDB6D;
+  }
+
+  QScrollBar::add-line:vertical {
+      border: 1px solid grey;
+      background: white;
+      height: 33px;
+      subcontrol-position: bottom;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::add-line:vertical:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::add-line:vertical:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::sub-line:vertical {
+      border: 1px solid grey;
+      background: white;
+      height: 33px;
+      subcontrol-position: top;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::sub-line:vertical:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::sub-line:vertical:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+      border: 1px solid grey;
+      width: 3px;
+      height: 3px;
+      background: white;
+  }
+
+QScrollBar:horizontal {
+      border-top: 2px solid #77bdb0;
+	  border-bottom: 2px solid #77bdb0;
+      background: white;
+      height: 20px;
+      margin: 0px 37px 0px 37px;
+  }
+
+  QScrollBar::handle:horizontal {
+      background: #e0dcdc;
+	  border-left: 2px solid #77bdb0;
+	  border-right: 2px solid #77bdb0; 
+      min-width: 5px;
+  }
+
+  QScrollBar::handle:horizontal:hover {
+       background: #F19CBB;
+  }
+
+  QScrollBar::handle:horizontal:pressed {
+       background: #FDDB6D;
+  }
+
+  QScrollBar::add-line:horizontal {
+      border: 2px solid grey;
+      background: white;
+      width: 33px;
+      subcontrol-position: left;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::add-line:horizontal:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::add-line:horizontal:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::sub-line:horizontal {
+      border: 2px solid grey;
+      background: white;
+      width: 33px;
+      subcontrol-position: right;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::sub-line:horizontal:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::sub-line:horizontal:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+      border: 2px solid grey;
+      width: 3px;
+      height: 3px;
+      background: white;
+  }</string>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::SingleSelection</enum>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <property name="verticalScrollMode">
+               <enum>QAbstractItemView::ScrollPerPixel</enum>
+              </property>
+              <property name="horizontalScrollMode">
+               <enum>QAbstractItemView::ScrollPerPixel</enum>
+              </property>
+              <attribute name="horizontalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="horizontalHeaderCascadingSectionResizes">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="horizontalHeaderStretchLastSection">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="verticalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="contractsAddRemove">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QGroupBox {
+	border: 0px;
+}
+
+QPushButton {
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #f5f5f5;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #9e9e9e;
+}
+
+ QPushButton:hover {
+     background-color: #78DBE2;
+ }
+ QPushButton:pressed {
+     background-color: #3F888F;
+ }</string>
+              </property>
+              <property name="title">
+               <string/>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item>
+                <widget class="QPushButton" name="addContract">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Создание нового договора&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="text">
+                  <string>Добавить</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>45</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="suppliers">
+         <attribute name="title">
+          <string>Поставщики</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <layout class="QVBoxLayout" name="suppliersVerticalLayout">
+            <item>
+             <spacer name="verticalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>70</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="supplierGoodCategoryGroup">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Maximum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>300</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QGroupBox {
+	background: white;
+	border: 0px;
+}
+
+QComboBox {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+}</string>
+              </property>
+              <property name="title">
+               <string/>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="label">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                   <weight>50</weight>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Категория 
+поставляемой одежды</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="supplierGoodCategory">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>230</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="currentText">
+                  <string>Все</string>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>Все</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Юбки</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Платья</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Рубашки</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Футболки</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Джинсы</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Брюки</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Свитера</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Куртки</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Пальто</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Носки</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Головные уборы</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTableView" name="suppliersTable">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QTableView {
+	margin: 20px;
+	margin-left: 45px;
+	margin-right: 45px;
+	background: white;
+	border: 1px solid black;
+	gridline-color: black;
+}
+
+QTableView::item {
+	color: black;
+}
+
+QTableView::item:selected {
+	background: #e9f3fb;
+}
+
+QHeaderView::section {
+	background: #6bd3e0;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border: 1px solid black;
+	border-left: 0px;
+	border-top: 0px;
+}
+
+  QScrollBar:vertical {
+      border: 1px solid #77bdb0;
+      background: white;
+      width: 20px;
+      margin: 35px 0 35px 0;
+  }
+
+  QScrollBar::handle:vertical {
+      background: #e0dcdc;
+	  border-top: 1px solid #77bdb0;
+	  border-bottom: 1px solid #77bdb0; 
+      min-height: 5px;
+  }
+
+  QScrollBar::handle:vertical:hover {
+       background: #F19CBB;
+  }
+
+  QScrollBar::handle:vertical:pressed {
+       background: #FDDB6D;
+  }
+
+  QScrollBar::add-line:vertical {
+      border: 1px solid grey;
+      background: white;
+      height: 33px;
+      subcontrol-position: bottom;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::add-line:vertical:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::add-line:vertical:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::sub-line:vertical {
+      border: 1px solid grey;
+      background: white;
+      height: 33px;
+      subcontrol-position: top;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::sub-line:vertical:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::sub-line:vertical:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+      border: 1px solid grey;
+      width: 3px;
+      height: 3px;
+      background: white;
+  }
+
+QScrollBar:horizontal {
+      border-top: 2px solid #77bdb0;
+	  border-bottom: 2px solid #77bdb0;
+      background: white;
+      height: 20px;
+      margin: 0px 37px 0px 37px;
+  }
+
+  QScrollBar::handle:horizontal {
+      background: #e0dcdc;
+	  border-left: 2px solid #77bdb0;
+	  border-right: 2px solid #77bdb0; 
+      min-width: 5px;
+  }
+
+  QScrollBar::handle:horizontal:hover {
+       background: #F19CBB;
+  }
+
+  QScrollBar::handle:horizontal:pressed {
+       background: #FDDB6D;
+  }
+
+  QScrollBar::add-line:horizontal {
+      border: 2px solid grey;
+      background: white;
+      width: 33px;
+      subcontrol-position: left;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::add-line:horizontal:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::add-line:horizontal:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::sub-line:horizontal {
+      border: 2px solid grey;
+      background: white;
+      width: 33px;
+      subcontrol-position: right;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::sub-line:horizontal:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::sub-line:horizontal:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+      border: 2px solid grey;
+      width: 3px;
+      height: 3px;
+      background: white;
+  }</string>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::SingleSelection</enum>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <property name="verticalScrollMode">
+               <enum>QAbstractItemView::ScrollPerPixel</enum>
+              </property>
+              <property name="horizontalScrollMode">
+               <enum>QAbstractItemView::ScrollPerPixel</enum>
+              </property>
+              <attribute name="horizontalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="horizontalHeaderCascadingSectionResizes">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="horizontalHeaderStretchLastSection">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="verticalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="suppliersAddRemove">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QGroupBox {
+	border: 0px;
+}
+
+QPushButton {
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #f5f5f5;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #9e9e9e;
+}
+
+ QPushButton:hover {
+     background-color: #78DBE2;
+ }
+ QPushButton:pressed {
+     background-color: #3F888F;
+ }</string>
+              </property>
+              <property name="title">
+               <string/>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_5">
+               <item>
+                <widget class="QPushButton" name="addSupplier">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Добавление нового поставщика&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="text">
+                  <string>Добавить</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>45</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="orders">
+         <attribute name="title">
+          <string>Заказы</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="ordersVerticalLayout">
+            <item>
+             <spacer name="verticalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>70</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="orderTypes">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Параметры отображения заказов&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QGroupBox {
+	background: #f5f5f5;
+	border: 1px solid black;
+}
+</string>
+              </property>
+              <property name="title">
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_6">
+               <property name="spacing">
+                <number>15</number>
+               </property>
+               <property name="leftMargin">
+                <number>9</number>
+               </property>
+               <property name="bottomMargin">
+                <number>10</number>
+               </property>
+               <item>
+                <widget class="QCheckBox" name="paid">
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Оплаченные</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="delivered">
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Доставленные</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTableView" name="ordersTable">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QTableView {
+	margin: 20px;
+	margin-left: 45px;
+	margin-right: 45px;
+	background: white;
+	border: 1px solid black;
+	gridline-color: black;
+}
+
+QTableView::item {
+	color: black;
+}
+
+QTableView::item:selected {
+	background: #e9f3fb;
+}
+
+QHeaderView::section {
+	background: #6bd3e0;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border: 1px solid black;
+	border-left: 0px;
+	border-top: 0px;
+}
+
+  QScrollBar:vertical {
+      border: 1px solid #77bdb0;
+      background: white;
+      width: 20px;
+      margin: 35px 0 35px 0;
+  }
+
+  QScrollBar::handle:vertical {
+      background: #e0dcdc;
+	  border-top: 1px solid #77bdb0;
+	  border-bottom: 1px solid #77bdb0; 
+      min-height: 5px;
+  }
+
+  QScrollBar::handle:vertical:hover {
+       background: #F19CBB;
+  }
+
+  QScrollBar::handle:vertical:pressed {
+       background: #FDDB6D;
+  }
+
+  QScrollBar::add-line:vertical {
+      border: 1px solid grey;
+      background: white;
+      height: 33px;
+      subcontrol-position: bottom;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::add-line:vertical:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::add-line:vertical:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::sub-line:vertical {
+      border: 1px solid grey;
+      background: white;
+      height: 33px;
+      subcontrol-position: top;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::sub-line:vertical:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::sub-line:vertical:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+      border: 1px solid grey;
+      width: 3px;
+      height: 3px;
+      background: white;
+  }
+
+QScrollBar:horizontal {
+      border-top: 2px solid #77bdb0;
+	  border-bottom: 2px solid #77bdb0;
+      background: white;
+      height: 20px;
+      margin: 0px 37px 0px 37px;
+  }
+
+  QScrollBar::handle:horizontal {
+      background: #e0dcdc;
+	  border-left: 2px solid #77bdb0;
+	  border-right: 2px solid #77bdb0; 
+      min-width: 5px;
+  }
+
+  QScrollBar::handle:horizontal:hover {
+       background: #F19CBB;
+  }
+
+  QScrollBar::handle:horizontal:pressed {
+       background: #FDDB6D;
+  }
+
+  QScrollBar::add-line:horizontal {
+      border: 2px solid grey;
+      background: white;
+      width: 33px;
+      subcontrol-position: left;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::add-line:horizontal:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::add-line:horizontal:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::sub-line:horizontal {
+      border: 2px solid grey;
+      background: white;
+      width: 33px;
+      subcontrol-position: right;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::sub-line:horizontal:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::sub-line:horizontal:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+      border: 2px solid grey;
+      width: 3px;
+      height: 3px;
+      background: white;
+  }</string>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::SingleSelection</enum>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <property name="verticalScrollMode">
+               <enum>QAbstractItemView::ScrollPerPixel</enum>
+              </property>
+              <property name="horizontalScrollMode">
+               <enum>QAbstractItemView::ScrollPerPixel</enum>
+              </property>
+              <attribute name="horizontalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="horizontalHeaderCascadingSectionResizes">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="horizontalHeaderStretchLastSection">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="verticalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="ordersAddRemove">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QGroupBox {
+	border: 0px;
+}
+
+QPushButton {
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #f5f5f5;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #9e9e9e;
+}
+
+ QPushButton:hover {
+     background-color: #78DBE2;
+ }
+ QPushButton:pressed {
+     background-color: #3F888F;
+ }</string>
+              </property>
+              <property name="title">
+               <string/>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_7">
+               <item>
+                <widget class="QPushButton" name="addOrder">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Добавление нового заказа&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="text">
+                  <string>Добавить</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>45</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="stock">
+         <attribute name="title">
+          <string>Склад</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="3" column="0">
+           <spacer name="verticalSpacer_10">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>45</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="stockVerticalLayout">
+            <item>
+             <spacer name="verticalSpacer_9">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>70</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="stockGoodCategoryGroup">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Maximum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>300</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QGroupBox {
+	background: white;
+	border: 0px;
+}
+
+QComboBox {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+}</string>
+              </property>
+              <property name="title">
+               <string/>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_10">
+               <property name="bottomMargin">
+                <number>6</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="label_3">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Категория товара</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QComboBox" name="stockGoodCategory">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>230</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="currentText">
+                  <string>Все</string>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>Все</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Юбки</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Платья</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Рубашки</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Футболки</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Джинсы</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Брюки</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Свитера</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Куртки</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Пальто</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Носки</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Головные уборы</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTableView" name="stockTable">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QTableView {
+	margin: 20px;
+	margin-left: 45px;
+	margin-right: 45px;
+	background: white;
+	border: 1px solid black;
+	gridline-color: black;
+}
+
+QTableView::item {
+	color: black;
+}
+
+QTableView::item:selected {
+	background: #e9f3fb;
+}
+
+QHeaderView::section {
+	background: #6bd3e0;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border: 1px solid black;
+	border-left: 0px;
+	border-top: 0px;
+}
+
+  QScrollBar:vertical {
+      border: 1px solid #77bdb0;
+      background: white;
+      width: 20px;
+      margin: 35px 0 35px 0;
+  }
+
+  QScrollBar::handle:vertical {
+      background: #e0dcdc;
+	  border-top: 1px solid #77bdb0;
+	  border-bottom: 1px solid #77bdb0; 
+      min-height: 5px;
+  }
+
+  QScrollBar::handle:vertical:hover {
+       background: #F19CBB;
+  }
+
+  QScrollBar::handle:vertical:pressed {
+       background: #FDDB6D;
+  }
+
+  QScrollBar::add-line:vertical {
+      border: 1px solid grey;
+      background: white;
+      height: 33px;
+      subcontrol-position: bottom;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::add-line:vertical:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::add-line:vertical:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::sub-line:vertical {
+      border: 1px solid grey;
+      background: white;
+      height: 33px;
+      subcontrol-position: top;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::sub-line:vertical:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::sub-line:vertical:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+      border: 1px solid grey;
+      width: 3px;
+      height: 3px;
+      background: white;
+  }
+
+QScrollBar:horizontal {
+      border-top: 2px solid #77bdb0;
+	  border-bottom: 2px solid #77bdb0;
+      background: white;
+      height: 20px;
+      margin: 0px 37px 0px 37px;
+  }
+
+  QScrollBar::handle:horizontal {
+      background: #e0dcdc;
+	  border-left: 2px solid #77bdb0;
+	  border-right: 2px solid #77bdb0; 
+      min-width: 5px;
+  }
+
+  QScrollBar::handle:horizontal:hover {
+       background: #F19CBB;
+  }
+
+  QScrollBar::handle:horizontal:pressed {
+       background: #FDDB6D;
+  }
+
+  QScrollBar::add-line:horizontal {
+      border: 2px solid grey;
+      background: white;
+      width: 33px;
+      subcontrol-position: left;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::add-line:horizontal:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::add-line:horizontal:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::sub-line:horizontal {
+      border: 2px solid grey;
+      background: white;
+      width: 33px;
+      subcontrol-position: right;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::sub-line:horizontal:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::sub-line:horizontal:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+      border: 2px solid grey;
+      width: 3px;
+      height: 3px;
+      background: white;
+  }</string>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Sunken</enum>
+              </property>
+              <property name="verticalScrollBarPolicy">
+               <enum>Qt::ScrollBarAsNeeded</enum>
+              </property>
+              <property name="horizontalScrollBarPolicy">
+               <enum>Qt::ScrollBarAsNeeded</enum>
+              </property>
+              <property name="sizeAdjustPolicy">
+               <enum>QAbstractScrollArea::AdjustIgnored</enum>
+              </property>
+              <property name="autoScrollMargin">
+               <number>16</number>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::SingleSelection</enum>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <property name="verticalScrollMode">
+               <enum>QAbstractItemView::ScrollPerPixel</enum>
+              </property>
+              <property name="horizontalScrollMode">
+               <enum>QAbstractItemView::ScrollPerPixel</enum>
+              </property>
+              <property name="showGrid">
+               <bool>true</bool>
+              </property>
+              <property name="gridStyle">
+               <enum>Qt::SolidLine</enum>
+              </property>
+              <property name="sortingEnabled">
+               <bool>false</bool>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+              <property name="cornerButtonEnabled">
+               <bool>true</bool>
+              </property>
+              <attribute name="horizontalHeaderCascadingSectionResizes">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="horizontalHeaderStretchLastSection">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="verticalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_3">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QGroupBox {
+	border: 0px;
+}
+
+QPushButton {
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #f5f5f5;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #9e9e9e;
+}
+
+ QPushButton:hover {
+     background-color: #78DBE2;
+ }
+ QPushButton:pressed {
+     background-color: #3F888F;
+ }</string>
+              </property>
+              <property name="title">
+               <string/>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_8">
+               <item>
+                <widget class="QPushButton" name="stockPrint">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Печать перечня товаров на складе&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #f5f5f5;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #9e9e9e;
+	margin-bottom: 11px;
+	margin-top: 11px;
+}
+
+ QPushButton:hover {
+     background-color: #78DBE2;
+ }
+ QPushButton:pressed {
+     background-color: #3F888F;
+ }</string>
+                 </property>
+                 <property name="text">
+                  <string>Печать</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="report">
+         <attribute name="title">
+          <string>Отчётность</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="analysisVerticalLayout">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_11">
+              <item>
+               <widget class="QGroupBox" name="groupBox_5">
+                <property name="maximumSize">
+                 <size>
+                  <width>400</width>
+                  <height>400</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QGroupBox {border: 2px solid #6bd3e0;}</string>
+                </property>
+                <property name="title">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+                <widget class="QWidget" name="gridLayoutWidget_5">
+                 <property name="geometry">
+                  <rect>
+                   <x>19</x>
+                   <y>22</y>
+                   <width>361</width>
+                   <height>351</height>
+                  </rect>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_12">
+                  <item row="0" column="0">
+                   <widget class="QGroupBox" name="reportTypeGroup">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Maximum">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>300</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QGroupBox {
+	background: white;
+	border: 0px;
+}
+
+QComboBox {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+}
+
+QLineEdit {
+	background: #dae8fc;
+	border: 1px solid #92abd0;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-right: 25px;
+	padding-left: 25px;
+}</string>
+                    </property>
+                    <property name="title">
+                     <string/>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_6">
+                     <property name="bottomMargin">
+                      <number>1</number>
+                     </property>
+                     <property name="horizontalSpacing">
+                      <number>14</number>
+                     </property>
+                     <item row="0" column="1" colspan="2">
+                      <widget class="QComboBox" name="reportCategory">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">padding-right: 5px;</string>
+                       </property>
+                       <property name="currentText">
+                        <string>Поставки за период</string>
+                       </property>
+                       <item>
+                        <property name="text">
+                         <string>Поставки за период</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Продажи за период</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QLabel" name="label_5">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>с</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="reportType">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Тип отчёта</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                       </property>
+                       <property name="wordWrap">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="1">
+                      <widget class="QLabel" name="label_6">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>по</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0" colspan="3">
+                      <widget class="QLabel" name="label_2">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                         <weight>75</weight>
+                         <bold>true</bold>
+                        </font>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">margin-top: 15px;
+margin-bottom: 5px;</string>
+                       </property>
+                       <property name="text">
+                        <string>Составить отчетность для периода</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="2">
+                      <widget class="QDateEdit" name="periodFrom">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="2">
+                      <widget class="QDateEdit" name="periodTo">
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <layout class="QHBoxLayout" name="horizontalLayout_9">
+                    <item>
+                     <widget class="QPushButton" name="analysisOk">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="toolTip">
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Создание отчета&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton {
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #f5f5f5;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #9e9e9e;
+	margin-top: 11px;
+	margin-bottom: 11px;
+}
+
+ QPushButton:hover {
+     background-color: #78DBE2;
+ }
+ QPushButton:pressed {
+     background-color: #3F888F;
+ }</string>
+                      </property>
+                      <property name="text">
+                       <string>Ок</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_7">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>145</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="store">
+         <attribute name="title">
+          <string>О магазине</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_7">
+          <item row="1" column="0">
+           <widget class="QTableView" name="storeTable">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>300</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Данные о поставщике&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QTableView {
+	margin: 20px;
+	margin-left: 45px;
+	margin-right: 45px;
+	background: white;
+	border: 1px solid black;
+	gridline-color: black;
+}
+
+QTableView::item {
+	color: black;
+}
+
+QTableView::item:selected {
+	background: #e9f3fb;
+}
+
+QHeaderView::section {
+	background: #6bd3e0;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border: 1px solid black;
+	border-left: 0px;
+	border-top: 0px;
+}
+
+  QScrollBar:vertical {
+      border: 1px solid #77bdb0;
+      background: white;
+      width: 20px;
+      margin: 35px 0 35px 0;
+  }
+
+  QScrollBar::handle:vertical {
+      background: #e0dcdc;
+	  border-top: 1px solid #77bdb0;
+	  border-bottom: 1px solid #77bdb0; 
+      min-height: 5px;
+  }
+
+  QScrollBar::handle:vertical:hover {
+       background: #F19CBB;
+  }
+
+  QScrollBar::handle:vertical:pressed {
+       background: #FDDB6D;
+  }
+
+  QScrollBar::add-line:vertical {
+      border: 1px solid grey;
+      background: white;
+      height: 33px;
+      subcontrol-position: bottom;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::add-line:vertical:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::add-line:vertical:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::sub-line:vertical {
+      border: 1px solid grey;
+      background: white;
+      height: 33px;
+      subcontrol-position: top;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::sub-line:vertical:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::sub-line:vertical:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+      border: 1px solid grey;
+      width: 3px;
+      height: 3px;
+      background: white;
+  }
+
+QScrollBar:horizontal {
+      border-top: 2px solid #77bdb0;
+	  border-bottom: 2px solid #77bdb0;
+      background: white;
+      height: 20px;
+      margin: 0px 37px 0px 37px;
+  }
+
+  QScrollBar::handle:horizontal {
+      background: #e0dcdc;
+	  border-left: 2px solid #77bdb0;
+	  border-right: 2px solid #77bdb0; 
+      min-width: 5px;
+  }
+
+  QScrollBar::handle:horizontal:hover {
+       background: #F19CBB;
+  }
+
+  QScrollBar::handle:horizontal:pressed {
+       background: #FDDB6D;
+  }
+
+  QScrollBar::add-line:horizontal {
+      border: 2px solid grey;
+      background: white;
+      width: 33px;
+      subcontrol-position: left;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::add-line:horizontal:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::add-line:horizontal:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::sub-line:horizontal {
+      border: 2px solid grey;
+      background: white;
+      width: 33px;
+      subcontrol-position: right;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::sub-line:horizontal:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::sub-line:horizontal:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+      border: 2px solid grey;
+      width: 3px;
+      height: 3px;
+      background: white;
+  }</string>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAsNeeded</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SingleSelection</enum>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <property name="verticalScrollMode">
+             <enum>QAbstractItemView::ScrollPerPixel</enum>
+            </property>
+            <property name="horizontalScrollMode">
+             <enum>QAbstractItemView::ScrollPerPixel</enum>
+            </property>
+            <attribute name="horizontalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <spacer name="verticalSpacer_11">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>100</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="0">
+           <spacer name="verticalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Preferred</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>100</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="0">
+           <widget class="QPushButton" name="saveStoreInfo">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #f5f5f5;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #9e9e9e;
+}
+
+ QPushButton:hover {
+     background-color: #78DBE2;
+ }
+ QPushButton:pressed {
+     background-color: #3F888F;
+ }</string>
+            </property>
+            <property name="text">
+             <string>Сохранить</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QMdiArea" name="mdiArea">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QMdiArea {
+	background: qlineargradient( x1:0.5 y1:0, x2:0.5 y2:1, stop:0 #acacac, stop:0.9 #f9f9f9);
+}</string>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
+        </property>
+        <property name="background">
+         <brush brushstyle="NoBrush">
+          <color alpha="255">
+           <red>160</red>
+           <green>160</green>
+           <blue>160</blue>
+          </color>
+         </brush>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../resource/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

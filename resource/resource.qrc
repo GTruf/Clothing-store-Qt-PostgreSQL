@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/window-logo.ico</file>
+        <file>icons/eyeOff.svg</file>
+        <file>icons/eyeOn.svg</file>
+        <file>icons/password.svg</file>
+    </qresource>
+</RCC>

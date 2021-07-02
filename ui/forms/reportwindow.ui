@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ReportWindow</class>
+ <widget class="QDialog" name="ReportWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>650</width>
+    <height>750</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>650</width>
+    <height>650</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Отчет</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../resource/resource.qrc">
+    <normaloff>:/icons/icons/window-logo.ico</normaloff>:/icons/icons/window-logo.ico</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+	background-color: white;
+	border-top: 1px solid #9e9e9e;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="leftMargin">
+      <number>50</number>
+     </property>
+     <property name="topMargin">
+      <number>10</number>
+     </property>
+     <property name="rightMargin">
+      <number>50</number>
+     </property>
+     <item>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="reportCategoryGroup">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>450</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QGroupBox {
+	background: white;
+	border-top: 1px solid black;
+	border-bottom: 2px solid black;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-top: 10px;
+}</string>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="reportCategory">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Отчет&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel { color :#007fbf; }</string>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#007fbf;&quot;&gt;Товар&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="periodGroup">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {
+	background: white;
+	border: 0px;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-top: 25px;
+	margin-bottom: 35px;
+}
+
+QLabel#periodTo,#periodFrom {
+	border: 1px solid black;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+QLabel#from {
+	margin-right: 3px;
+}
+
+QLabel#to {
+	margin-left: 60px;
+}</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="topMargin">
+         <number>9</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="from">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;с&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="periodFrom">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="to">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>по</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="periodTo">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTableView" name="reportInfo">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTableView {
+	background: white;
+	border: 1px solid black;
+	gridline-color: black;
+}
+
+QTableView::item {
+	color: black;
+}
+
+QTableView::item:selected {
+	background: #e9f3fb;
+}
+
+QHeaderView::section {
+	background: #6bd3e0;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border: 1px solid black;
+	border-left: 0px;
+	border-top: 0px;
+}
+
+  QScrollBar:vertical {
+      border: 1px solid #77bdb0;
+      background: white;
+      width: 20px;
+      margin: 35px 0 35px 0;
+  }
+
+  QScrollBar::handle:vertical {
+      background: #e0dcdc;
+	  border-top: 1px solid #77bdb0;
+	  border-bottom: 1px solid #77bdb0; 
+      min-height: 5px;
+  }
+
+  QScrollBar::handle:vertical:hover {
+       background: #F19CBB;
+  }
+
+  QScrollBar::handle:vertical:pressed {
+       background: #FDDB6D;
+  }
+
+  QScrollBar::add-line:vertical {
+      border: 1px solid grey;
+      background: white;
+      height: 33px;
+      subcontrol-position: bottom;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::add-line:vertical:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::add-line:vertical:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::sub-line:vertical {
+      border: 1px solid grey;
+      background: white;
+      height: 33px;
+      subcontrol-position: top;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::sub-line:vertical:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::sub-line:vertical:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+      border: 1px solid grey;
+      width: 3px;
+      height: 3px;
+      background: white;
+  }
+
+QScrollBar:horizontal {
+      border-top: 2px solid #77bdb0;
+	  border-bottom: 2px solid #77bdb0;
+      background: white;
+      height: 20px;
+      margin: 0px 37px 0px 37px;
+  }
+
+  QScrollBar::handle:horizontal {
+      background: #e0dcdc;
+	  border-left: 2px solid #77bdb0;
+	  border-right: 2px solid #77bdb0; 
+      min-width: 5px;
+  }
+
+  QScrollBar::handle:horizontal:hover {
+       background: #F19CBB;
+  }
+
+  QScrollBar::handle:horizontal:pressed {
+       background: #FDDB6D;
+  }
+
+  QScrollBar::add-line:horizontal {
+      border: 2px solid grey;
+      background: white;
+      width: 33px;
+      subcontrol-position: left;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::add-line:horizontal:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::add-line:horizontal:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::sub-line:horizontal {
+      border: 2px solid grey;
+      background: white;
+      width: 33px;
+      subcontrol-position: right;
+      subcontrol-origin: margin;
+  }
+
+  QScrollBar::sub-line:horizontal:hover {
+      background: #CD9575;
+  }
+
+  QScrollBar::sub-line:horizontal:pressed {
+      background: #FDDB6D;
+  }
+
+  QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+      border: 2px solid grey;
+      width: 3px;
+      height: 3px;
+      background: white;
+  }</string>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAsNeeded</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAsNeeded</enum>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
+       </property>
+       <property name="verticalScrollMode">
+        <enum>QAbstractItemView::ScrollPerPixel</enum>
+       </property>
+       <property name="horizontalScrollMode">
+        <enum>QAbstractItemView::ScrollPerPixel</enum>
+       </property>
+       <property name="showGrid">
+        <bool>true</bool>
+       </property>
+       <property name="gridStyle">
+        <enum>Qt::SolidLine</enum>
+       </property>
+       <property name="sortingEnabled">
+        <bool>false</bool>
+       </property>
+       <property name="cornerButtonEnabled">
+        <bool>true</bool>
+       </property>
+       <attribute name="horizontalHeaderMinimumSectionSize">
+        <number>50</number>
+       </attribute>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>150</number>
+       </attribute>
+       <attribute name="horizontalHeaderHighlightSections">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderCascadingSectionResizes">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderMinimumSectionSize">
+        <number>37</number>
+       </attribute>
+       <attribute name="verticalHeaderDefaultSectionSize">
+        <number>37</number>
+       </attribute>
+       <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderStretchLastSection">
+        <bool>false</bool>
+       </attribute>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Preferred</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>30</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="print">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Печать отчета&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-color: #f5f5f5;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #9e9e9e;
+	margin-top: 11px;
+	margin-bottom: 11px;
+}
+
+ QPushButton:hover {
+     background-color: #78DBE2;
+ }
+ QPushButton:pressed {
+     background-color: #3F888F;
+ }</string>
+       </property>
+       <property name="text">
+        <string>Печать</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../resource/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
